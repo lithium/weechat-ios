@@ -25,6 +25,7 @@
 		121F3B211863B2280017E6C3 /* WeechatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B201863B2280017E6C3 /* WeechatTests.m */; };
 		121F3B2C1864AD0E0017E6C3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */; };
 		121F3B301864CCBC0017E6C3 /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B2F1864CCBC0017E6C3 /* warning.png */; };
+		121F3B321864DA4C0017E6C3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B311864DA4C0017E6C3 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		121F3B2A1864AD0E0017E6C3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		121F3B2F1864CCBC0017E6C3 /* warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warning.png; sourceTree = "<group>"; };
+		121F3B311864DA4C0017E6C3 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,14 +129,15 @@
 				121F3AFF1863B2280017E6C3 /* AppDelegate.m */,
 				121F3B011863B2280017E6C3 /* Main_iPhone.storyboard */,
 				121F3B041863B2280017E6C3 /* Main_iPad.storyboard */,
-				121F3B071863B2280017E6C3 /* MasterViewController.h */,
 				121F3B2A1864AD0E0017E6C3 /* SettingsViewController.h */,
 				121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */,
+				121F3B071863B2280017E6C3 /* MasterViewController.h */,
 				121F3B081863B2280017E6C3 /* MasterViewController.m */,
 				121F3B0A1863B2280017E6C3 /* DetailViewController.h */,
 				121F3B0B1863B2280017E6C3 /* DetailViewController.m */,
 				121F3B0D1863B2280017E6C3 /* Images.xcassets */,
 				121F3AF61863B2280017E6C3 /* Supporting Files */,
+				121F3B311864DA4C0017E6C3 /* Settings.bundle */,
 			);
 			path = Weechat;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				121F3B061863B2280017E6C3 /* Main_iPad.storyboard in Resources */,
 				121F3B0E1863B2280017E6C3 /* Images.xcassets in Resources */,
 				121F3B031863B2280017E6C3 /* Main_iPhone.storyboard in Resources */,
+				121F3B321864DA4C0017E6C3 /* Settings.bundle in Resources */,
 				121F3AFA1863B2280017E6C3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

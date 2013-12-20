@@ -23,7 +23,10 @@
         self.clearsSelectionOnViewWillAppear = NO;
         self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
+    
     [super awakeFromNib];
+    
+    
 }
 
 - (void)viewDidLoad
@@ -35,6 +38,17 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *relayHost = [defaults stringForKey:@"relayHostname_preference"];
+    NSString *relayPassword = [defaults stringForKey:@"relayPassword_preference"];
+    int relayPort = [defaults integerForKey:@"relayPort_preference"];
+    BOOL useSsl = [defaults integerForKey:@"relayWeechatSsl_preference"];
+    
+    if ([relayHost length] < 1 || [relayPassword length] < 1) {
+        [self performSegueWithIdentifier:@"showConnectionSettings" sender:self];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

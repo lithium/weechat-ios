@@ -12,12 +12,27 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="wGW-rP-pBO" kind="relationship" relationship="rootViewController" id="H4r-XV-MNK"/>
+                        <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="uwf-sU-kL4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-417" y="-70"/>
+            <point key="canvasLocation" x="-577" y="731"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FDA-wA-2iY">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="YQ6-nf-NBK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dVg-DZ-CgV">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wGW-rP-pBO" kind="relationship" relationship="rootViewController" id="b7c-Mm-rUq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCA-6Z-Vsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-577" y="-76"/>
         </scene>
         <!--Settings View Controller - Connection Settings-->
         <scene sceneID="g1u-K3-ytm">
@@ -139,12 +154,12 @@
                         <outlet property="relayPassword" destination="rik-iK-1M1" id="5qJ-q7-nvN"/>
                         <outlet property="relayPort" destination="52x-u9-OZa" id="2jv-ix-stP"/>
                         <outlet property="relayWeechatSsl" destination="kOV-tB-9wf" id="HR4-MU-a8a"/>
-                        <segue destination="pGg-6v-bdr" kind="push" identifier="connectToRelay" id="wrM-9m-fXe"/>
+                        <segue destination="pGg-6v-bdr" kind="push" identifier="showBufferList" id="wrM-9m-fXe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkN-Jr-QZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="-70"/>
+            <point key="canvasLocation" x="-10" y="-76"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -184,10 +199,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <connections>
+                        <segue destination="YQ6-nf-NBK" kind="modal" identifier="showConnectionSettings" id="upz-tH-RNp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="731"/>
+            <point key="canvasLocation" x="-10" y="731"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="Cn3-H9-jdl">
@@ -223,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="550" y="731"/>
+            <point key="canvasLocation" x="552" y="731"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -231,4 +249,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="wrM-9m-fXe"/>
+    </inferredMetricsTieBreakers>
 </document>

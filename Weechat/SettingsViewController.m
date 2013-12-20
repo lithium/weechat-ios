@@ -21,7 +21,7 @@
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                 target:self
-                                                                                action:@selector(connectToRelay:)];
+                                                                                action:@selector(savePreferences:)];
     self.navigationItem.rightBarButtonItem = doneButton;
 }
 
@@ -87,9 +87,20 @@
     return valid;
 }
 
-- (void)connectToRelay:(id)sender {
+- (void)savePreferences:(id)sender {
     if ([self validate]) {
-        [self performSegueWithIdentifier:@"connectToRelay" sender:self];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValue:[self hostname]
+                    forKey:@"relayHostname_preference"];
+        [defaults setValue:[NSNumber numberWithInt:[self port]]
+                    forKey:@"relayPort_preference"];
+        [defaults setValue:[self password]
+                    forKey:@"relayPassword_preference"];
+        [defaults setValue:[NSNumber numberWithBool:[self useSSL]]
+                    forKey:@"relayWeechatSsl_preference"];
+        
+        [self performSegueWithIdentifier:@"showBufferList" sender:self];
     }
 }
 
