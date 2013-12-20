@@ -23,6 +23,7 @@
 		121F3B171863B2280017E6C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F3AF31863B2280017E6C3 /* UIKit.framework */; };
 		121F3B1F1863B2280017E6C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B1D1863B2280017E6C3 /* InfoPlist.strings */; };
 		121F3B211863B2280017E6C3 /* WeechatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B201863B2280017E6C3 /* WeechatTests.m */; };
+		121F3B2C1864AD0E0017E6C3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		121F3B1C1863B2280017E6C3 /* WeechatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeechatTests-Info.plist"; sourceTree = "<group>"; };
 		121F3B1E1863B2280017E6C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		121F3B201863B2280017E6C3 /* WeechatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeechatTests.m; sourceTree = "<group>"; };
+		121F3B2A1864AD0E0017E6C3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				121F3B011863B2280017E6C3 /* Main_iPhone.storyboard */,
 				121F3B041863B2280017E6C3 /* Main_iPad.storyboard */,
 				121F3B071863B2280017E6C3 /* MasterViewController.h */,
+				121F3B2A1864AD0E0017E6C3 /* SettingsViewController.h */,
+				121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */,
 				121F3B081863B2280017E6C3 /* MasterViewController.m */,
 				121F3B0A1863B2280017E6C3 /* DetailViewController.h */,
 				121F3B0B1863B2280017E6C3 /* DetailViewController.m */,
@@ -260,6 +265,7 @@
 			files = (
 				121F3B001863B2280017E6C3 /* AppDelegate.m in Sources */,
 				121F3B091863B2280017E6C3 /* MasterViewController.m in Sources */,
+				121F3B2C1864AD0E0017E6C3 /* SettingsViewController.m in Sources */,
 				121F3AFC1863B2280017E6C3 /* main.m in Sources */,
 				121F3B0C1863B2280017E6C3 /* DetailViewController.m in Sources */,
 			);
