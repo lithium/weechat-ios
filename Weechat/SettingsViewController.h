@@ -18,5 +18,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *relayPassword;
 @property (weak, nonatomic) IBOutlet UISwitch *relayWeechatSsl;
 
-- (IBAction)clickConnect:(id)sender;
+- (void)connectToRelay:(id)sender;
 @end

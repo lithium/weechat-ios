@@ -24,6 +24,7 @@
 		121F3B1F1863B2280017E6C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B1D1863B2280017E6C3 /* InfoPlist.strings */; };
 		121F3B211863B2280017E6C3 /* WeechatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B201863B2280017E6C3 /* WeechatTests.m */; };
 		121F3B2C1864AD0E0017E6C3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */; };
+		121F3B301864CCBC0017E6C3 /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B2F1864CCBC0017E6C3 /* warning.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		121F3B201863B2280017E6C3 /* WeechatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeechatTests.m; sourceTree = "<group>"; };
 		121F3B2A1864AD0E0017E6C3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		121F3B2F1864CCBC0017E6C3 /* warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warning.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				121F3B1A1863B2280017E6C3 /* WeechatTests */,
 				121F3AEE1863B2280017E6C3 /* Frameworks */,
 				121F3AED1863B2280017E6C3 /* Products */,
+				121F3B2F1864CCBC0017E6C3 /* warning.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121F3B301864CCBC0017E6C3 /* warning.png in Resources */,
 				121F3B061863B2280017E6C3 /* Main_iPad.storyboard in Resources */,
 				121F3B0E1863B2280017E6C3 /* Images.xcassets in Resources */,
 				121F3B031863B2280017E6C3 /* Main_iPhone.storyboard in Resources */,

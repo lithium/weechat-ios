@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-417" y="-70"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings View Controller - Connection Settings-->
         <scene sceneID="g1u-K3-ytm">
             <objects>
                 <tableViewController id="wGW-rP-pBO" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -125,26 +125,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0YZ-4j-x60">
-                                        <rect key="frame" x="0.0" y="295" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0YZ-4j-x60" id="ZeX-sb-HHm">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgW-7y-IUg">
-                                                    <rect key="frame" x="181" y="7" width="119" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Connect to Relay">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="clickConnect:" destination="wGW-rP-pBO" eventType="touchUpInside" id="hmb-pl-YZM"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -153,7 +133,7 @@
                             <outlet property="delegate" destination="wGW-rP-pBO" id="YPJ-gZ-A1V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="owC-Hi-fqv"/>
+                    <navigationItem key="navigationItem" title="Connection Settings" id="owC-Hi-fqv"/>
                     <connections>
                         <outlet property="relayHostname" destination="SnG-am-jkO" id="4oE-Dk-aUr"/>
                         <outlet property="relayPassword" destination="rik-iK-1M1" id="5qJ-q7-nvN"/>

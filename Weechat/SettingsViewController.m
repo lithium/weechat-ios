@@ -15,6 +15,16 @@
 @synthesize relayPort;
 @synthesize relayWeechatSsl;
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                target:self
+                                                                                action:@selector(connectToRelay:)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+}
+
 - (NSString*)hostname
 {
     return [relayHostname text];
@@ -38,16 +48,46 @@
     return relayWeechatSsl.on;
 }
 
+//- (UIImageView *)errorImageView
+- (BOOL)setTextFieldValid:(UITextField *)field withCondition:(BOOL)valid
+{
+    field.rightViewMode = UITextFieldViewModeAlways;
 
-- (BOOL)validate {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,16,16)];
+    imageView.image = [UIImage imageNamed:@"warning.png"];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    if ([[self hostname] length] > 0 && [[self password] length] > 0)
-        return YES;
-    
-    return NO;
+    if (valid) {
+        field.rightView = nil;
+    } else {
+        field.rightView = imageView;
+    }
+
+    return valid;
 }
 
-- (IBAction)clickConnect:(id)sender {
+- (BOOL)validateHostname
+{
+    return [self setTextFieldValid:relayHostname
+                     withCondition:([[self hostname] length] > 0)];
+}
+- (BOOL)validatePassword
+{
+    return [self setTextFieldValid:relayPassword
+                     withCondition:([[self password] length] > 0)];
+}
+
+- (BOOL)validate
+{
+    BOOL valid = YES;
+    
+    valid = [self validateHostname] && valid;
+    valid = [self validatePassword] && valid;
+
+    return valid;
+}
+
+- (void)connectToRelay:(id)sender {
     if ([self validate]) {
         [self performSegueWithIdentifier:@"connectToRelay" sender:self];
     }
@@ -65,6 +105,13 @@
         [textField resignFirstResponder];
     }
     
+    return YES;
+}
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    [self setTextFieldValid:textField withCondition:YES];
     return YES;
 }
 @end
