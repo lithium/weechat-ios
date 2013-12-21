@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120C37F01866114B00D27EAA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 120C37EF1866114B00D27EAA /* libz.dylib */; };
 		121F3AF01863B2280017E6C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F3AEF1863B2280017E6C3 /* Foundation.framework */; };
 		121F3AF21863B2280017E6C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F3AF11863B2280017E6C3 /* CoreGraphics.framework */; };
 		121F3AF41863B2280017E6C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F3AF31863B2280017E6C3 /* UIKit.framework */; };
@@ -26,6 +27,8 @@
 		121F3B2C1864AD0E0017E6C3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */; };
 		121F3B301864CCBC0017E6C3 /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B2F1864CCBC0017E6C3 /* warning.png */; };
 		121F3B321864DA4C0017E6C3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B311864DA4C0017E6C3 /* Settings.bundle */; };
+		121F3B3518650C120017E6C3 /* WeechatRelayHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B3418650C120017E6C3 /* WeechatRelayHandler.m */; };
+		121F3B39186545160017E6C3 /* GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B38186545160017E6C3 /* GZIP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120C37EF1866114B00D27EAA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		121F3AEC1863B2280017E6C3 /* Weechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		121F3AEF1863B2280017E6C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		121F3AF11863B2280017E6C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +69,10 @@
 		121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		121F3B2F1864CCBC0017E6C3 /* warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warning.png; sourceTree = "<group>"; };
 		121F3B311864DA4C0017E6C3 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		121F3B3318650C120017E6C3 /* WeechatRelayHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeechatRelayHandler.h; sourceTree = "<group>"; };
+		121F3B3418650C120017E6C3 /* WeechatRelayHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeechatRelayHandler.m; sourceTree = "<group>"; };
+		121F3B37186545160017E6C3 /* GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZIP.h; sourceTree = "<group>"; };
+		121F3B38186545160017E6C3 /* GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZIP.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				120C37F01866114B00D27EAA /* libz.dylib in Frameworks */,
 				121F3AF21863B2280017E6C3 /* CoreGraphics.framework in Frameworks */,
 				121F3AF41863B2280017E6C3 /* UIKit.framework in Frameworks */,
 				121F3AF01863B2280017E6C3 /* Foundation.framework in Frameworks */,
@@ -114,6 +123,8 @@
 		121F3AEE1863B2280017E6C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				120C37EF1866114B00D27EAA /* libz.dylib */,
+				121F3B36186545150017E6C3 /* GZIP */,
 				121F3AEF1863B2280017E6C3 /* Foundation.framework */,
 				121F3AF11863B2280017E6C3 /* CoreGraphics.framework */,
 				121F3AF31863B2280017E6C3 /* UIKit.framework */,
@@ -129,6 +140,8 @@
 				121F3AFF1863B2280017E6C3 /* AppDelegate.m */,
 				121F3B011863B2280017E6C3 /* Main_iPhone.storyboard */,
 				121F3B041863B2280017E6C3 /* Main_iPad.storyboard */,
+				121F3B3318650C120017E6C3 /* WeechatRelayHandler.h */,
+				121F3B3418650C120017E6C3 /* WeechatRelayHandler.m */,
 				121F3B2A1864AD0E0017E6C3 /* SettingsViewController.h */,
 				121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */,
 				121F3B071863B2280017E6C3 /* MasterViewController.h */,
@@ -137,7 +150,6 @@
 				121F3B0B1863B2280017E6C3 /* DetailViewController.m */,
 				121F3B0D1863B2280017E6C3 /* Images.xcassets */,
 				121F3AF61863B2280017E6C3 /* Supporting Files */,
-				121F3B311864DA4C0017E6C3 /* Settings.bundle */,
 			);
 			path = Weechat;
 			sourceTree = "<group>";
@@ -145,6 +157,7 @@
 		121F3AF61863B2280017E6C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				121F3B311864DA4C0017E6C3 /* Settings.bundle */,
 				121F3AF71863B2280017E6C3 /* Weechat-Info.plist */,
 				121F3AF81863B2280017E6C3 /* InfoPlist.strings */,
 				121F3AFB1863B2280017E6C3 /* main.m */,
@@ -169,6 +182,16 @@
 				121F3B1D1863B2280017E6C3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		121F3B36186545150017E6C3 /* GZIP */ = {
+			isa = PBXGroup;
+			children = (
+				121F3B37186545160017E6C3 /* GZIP.h */,
+				121F3B38186545160017E6C3 /* GZIP.m */,
+			);
+			name = GZIP;
+			path = GZIP/GZIP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121F3B39186545160017E6C3 /* GZIP.m in Sources */,
 				121F3B001863B2280017E6C3 /* AppDelegate.m in Sources */,
 				121F3B091863B2280017E6C3 /* MasterViewController.m in Sources */,
+				121F3B3518650C120017E6C3 /* WeechatRelayHandler.m in Sources */,
 				121F3B2C1864AD0E0017E6C3 /* SettingsViewController.m in Sources */,
 				121F3AFC1863B2280017E6C3 /* main.m in Sources */,
 				121F3B0C1863B2280017E6C3 /* DetailViewController.m in Sources */,
@@ -494,6 +519,7 @@
 				121F3B261863B2280017E6C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		121F3B271863B2280017E6C3 /* Build configuration list for PBXNativeTarget "WeechatTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +528,7 @@
 				121F3B291863B2280017E6C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
