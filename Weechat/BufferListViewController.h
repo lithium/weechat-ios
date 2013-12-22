@@ -10,7 +10,7 @@
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface BufferListViewController : UITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 

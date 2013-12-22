@@ -14,6 +14,7 @@
 @property NSString *hostname;
 @property int port;
 @property BOOL useSSL;
+@property id delegate;
 
 - (id)init;
 

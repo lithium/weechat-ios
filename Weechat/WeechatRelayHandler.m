@@ -132,10 +132,14 @@
     if ([msgid hasPrefix:@"SEL:"]) {
         SEL selector = NSSelectorFromString([msgid substringFromIndex:4]);
         if (selector) {
-            IMP imp = [self methodForSelector:selector];
+            id target = _delegate;
+            if (target == nil || ![target respondsToSelector:selector]) {
+                target = self;
+            }
+            IMP imp = [target methodForSelector:selector];
             void (*func)(id, SEL, WeechatMessage*) = (void*)imp;
             if (func) {
-                func(self, selector, message);
+                func(target, selector, message);
             }
         }
     }
@@ -171,6 +175,10 @@
     NSDictionary *hdata = [[message objects] objectAtIndex:0];
     NSArray *buffers = [hdata objectForKey:@"items"];
     NSLog(@"buffers: %@", buffers);
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(bufferList:)]) {
+        [_delegate bufferList:message];
+    }
 }
 
 @end

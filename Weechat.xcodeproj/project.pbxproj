@@ -17,7 +17,7 @@
 		121F3B001863B2280017E6C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3AFF1863B2280017E6C3 /* AppDelegate.m */; };
 		121F3B031863B2280017E6C3 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B011863B2280017E6C3 /* Main_iPhone.storyboard */; };
 		121F3B061863B2280017E6C3 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B041863B2280017E6C3 /* Main_iPad.storyboard */; };
-		121F3B091863B2280017E6C3 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B081863B2280017E6C3 /* MasterViewController.m */; };
+		121F3B091863B2280017E6C3 /* BufferListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B081863B2280017E6C3 /* BufferListViewController.m */; };
 		121F3B0C1863B2280017E6C3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 121F3B0B1863B2280017E6C3 /* DetailViewController.m */; };
 		121F3B0E1863B2280017E6C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 121F3B0D1863B2280017E6C3 /* Images.xcassets */; };
 		121F3B151863B2280017E6C3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F3B141863B2280017E6C3 /* XCTest.framework */; };
@@ -58,8 +58,8 @@
 		121F3AFF1863B2280017E6C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		121F3B021863B2280017E6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		121F3B051863B2280017E6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		121F3B071863B2280017E6C3 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		121F3B081863B2280017E6C3 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		121F3B071863B2280017E6C3 /* BufferListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BufferListViewController.h; sourceTree = "<group>"; };
+		121F3B081863B2280017E6C3 /* BufferListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BufferListViewController.m; sourceTree = "<group>"; };
 		121F3B0A1863B2280017E6C3 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		121F3B0B1863B2280017E6C3 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		121F3B0D1863B2280017E6C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 				121F3B041863B2280017E6C3 /* Main_iPad.storyboard */,
 				121F3B2A1864AD0E0017E6C3 /* SettingsViewController.h */,
 				121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */,
-				121F3B071863B2280017E6C3 /* MasterViewController.h */,
-				121F3B081863B2280017E6C3 /* MasterViewController.m */,
+				121F3B071863B2280017E6C3 /* BufferListViewController.h */,
+				121F3B081863B2280017E6C3 /* BufferListViewController.m */,
 				121F3B0A1863B2280017E6C3 /* DetailViewController.h */,
 				121F3B0B1863B2280017E6C3 /* DetailViewController.m */,
 				121F3B0D1863B2280017E6C3 /* Images.xcassets */,
@@ -309,7 +309,7 @@
 			files = (
 				121F3B39186545160017E6C3 /* GZIP.m in Sources */,
 				121F3B001863B2280017E6C3 /* AppDelegate.m in Sources */,
-				121F3B091863B2280017E6C3 /* MasterViewController.m in Sources */,
+				121F3B091863B2280017E6C3 /* BufferListViewController.m in Sources */,
 				120C37F418661C0600D27EAA /* WeechatMessage.m in Sources */,
 				121F3B3518650C120017E6C3 /* WeechatRelayHandler.m in Sources */,
 				121F3B2C1864AD0E0017E6C3 /* SettingsViewController.m in Sources */,
