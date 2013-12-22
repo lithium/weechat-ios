@@ -7,11 +7,12 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "WeechatRelayHandler.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
+    WeechatRelayHandler *_relay;
 }
 @end
 
@@ -39,16 +40,25 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
+    
+    _relay = [[WeechatRelayHandler alloc] init];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *relayHost = [defaults stringForKey:@"relayHostname_preference"];
     NSString *relayPassword = [defaults stringForKey:@"relayPassword_preference"];
     int relayPort = [defaults integerForKey:@"relayPort_preference"];
-    BOOL useSsl = [defaults integerForKey:@"relayWeechatSsl_preference"];
+    BOOL useSSL = [defaults integerForKey:@"relayWeechatSsl_preference"];
     
     if ([relayHost length] < 1 || [relayPassword length] < 1) {
         [self performSegueWithIdentifier:@"showConnectionSettings" sender:self];
     }
-    
+    else {
+        [_relay setHostname:relayHost];
+        [_relay setPassword:relayPassword];
+        [_relay setPort:relayPort];
+        [_relay setUseSSL:useSSL];
+        [_relay connect];
+    }
 }
 
 - (void)didReceiveMemoryWarning

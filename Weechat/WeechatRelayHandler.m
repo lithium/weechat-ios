@@ -8,18 +8,21 @@
 
 #import "WeechatRelayHandler.h"
 #import "GZIP.h"
+#import "WeechatMessage.h"
 
 @implementation WeechatRelayHandler
 {
     NSInputStream *inputStream;
     NSOutputStream *outputStream;
     NSMutableData *outputBuffer;
+    NSMutableData *inputBuffer;
 }
 
 - (id)init
 {
     if (self) {
         outputBuffer = [NSMutableData dataWithCapacity:1024];
+        inputBuffer = [NSMutableData dataWithCapacity:4096];
     }
     return self;
 }
@@ -50,9 +53,13 @@
     
     //queue up init message to immediately send after connecting
     [self sendCommand:@"init"
-        withArguments:[NSString stringWithFormat:@"password=%@,compression=zlib", [self password]]
+        withArguments:[NSString stringWithFormat:@"password=%@,compression=off", [self password]]
          andMessageId:nil];
-    [self sendCommand:@"hdata" withArguments:@"buffer:gui_buffers(*) number,name" andMessageId:@"bufferList"];
+    
+    [self sendCommand:@"hdata"
+        withArguments:@"buffer:gui_buffers(*) number,name"
+          andSelector:@selector(bufferList:)];
+
     
     [inputStream open];
     [outputStream open];
@@ -66,28 +73,40 @@
     switch (eventCode) {
         case NSStreamEventHasBytesAvailable:
         {
-            //read ready
-            uint8_t *buffer;
-            NSUInteger available;
+            //read available into inputBuffer
+            while ([inputStream hasBytesAvailable]) {
+                uint8_t buffer[1024];
+                int read = [inputStream read:buffer maxLength:1024];
+                [inputBuffer appendBytes:buffer length:read];
+            }
             
-            [inputStream getBuffer:&buffer length:&available];
-            if (available > 4) {
-                uint32_t *length = (uint32_t*)buffer;
+            
+            //dispatch all messages present in inputBuffer
+            int available;
+            while ((available = [inputBuffer length]) > 4) {
+                uint8_t *bytes = (uint8_t*)[inputBuffer bytes];
+                uint32_t length = bytes[0] << 24 | bytes[1] << 16 | bytes[2] <<8 | bytes[3];
                 
-                if (available-4 < *length) {
-                    // not enough bytes to read entire message now
-                    break;
-                    
+                if (available < length) {
+                    return; // not enough bytes yet
                 }
-                uint8_t *compressed = (uint8_t*)buffer+4;
                 
-                NSData *data = [NSData dataWithBytes:buffer+5 length:*length-5];
-                if (*compressed == 1) {
+                uint8_t compressed = *(uint8_t*)(bytes+4);
+                NSData *data = [NSData dataWithBytes:bytes+5 length:length - 5];
+                if (compressed == 1) {
                     data = [data gunzippedData];
                 }
                 
-//                WeechatData *wd = [WeechatData withData:data];
-//                NSString *messageId = wd.getString();
+                //dispatch
+                WeechatMessage *msg = [WeechatMessage messageWithData:inputBuffer];
+                [self dispatchMessage:msg];
+                
+                // shift message out of buffer
+                int remaining = available - length;
+                [inputBuffer replaceBytesInRange:NSMakeRange(0, remaining)
+                                       withBytes:[inputBuffer bytes]+length
+                                          length:remaining];
+                [inputBuffer setLength:remaining];
             }
             
             break;
@@ -104,6 +123,21 @@
         }
 
             
+    }
+}
+
+- (void)dispatchMessage:(WeechatMessage*)message
+{
+    NSString *msgid = [message messageId];
+    if ([msgid hasPrefix:@"SEL:"]) {
+        SEL selector = NSSelectorFromString([msgid substringFromIndex:4]);
+        if (selector) {
+            IMP imp = [self methodForSelector:selector];
+            void (*func)(id, SEL, WeechatMessage*) = (void*)imp;
+            if (func) {
+                func(self, selector, message);
+            }
+        }
     }
 }
 
@@ -125,6 +159,18 @@
         [self enqueueString:[NSString stringWithFormat:@"%@ %@\n", command, arguments]];
     }
 }
+- (void)sendCommand:(NSString*)command withArguments:(NSString *)arguments andSelector:(SEL)selector
+{
+    [self sendCommand:command withArguments:arguments andMessageId:[NSString stringWithFormat:@"SEL:%@", NSStringFromSelector(selector)]];
+}
 
+
+- (void)bufferList:(WeechatMessage*)message
+{
+//    NSLog(@"hdata: %@", message);
+    NSDictionary *hdata = [[message objects] objectAtIndex:0];
+    NSArray *buffers = [hdata objectForKey:@"items"];
+    NSLog(@"buffers: %@", buffers);
+}
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		120C37F01866114B00D27EAA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 120C37EF1866114B00D27EAA /* libz.dylib */; };
+		120C37F418661C0600D27EAA /* WeechatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 120C37F318661C0600D27EAA /* WeechatMessage.m */; };
 		121F3AF01863B2280017E6C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F3AEF1863B2280017E6C3 /* Foundation.framework */; };
 		121F3AF21863B2280017E6C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F3AF11863B2280017E6C3 /* CoreGraphics.framework */; };
 		121F3AF41863B2280017E6C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121F3AF31863B2280017E6C3 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		120C37EF1866114B00D27EAA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		120C37F218661C0600D27EAA /* WeechatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeechatMessage.h; sourceTree = "<group>"; };
+		120C37F318661C0600D27EAA /* WeechatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeechatMessage.m; sourceTree = "<group>"; };
 		121F3AEC1863B2280017E6C3 /* Weechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		121F3AEF1863B2280017E6C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		121F3AF11863B2280017E6C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +103,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120C37F11866163D00D27EAA /* Relay */ = {
+			isa = PBXGroup;
+			children = (
+				121F3B3318650C120017E6C3 /* WeechatRelayHandler.h */,
+				121F3B3418650C120017E6C3 /* WeechatRelayHandler.m */,
+				120C37F218661C0600D27EAA /* WeechatMessage.h */,
+				120C37F318661C0600D27EAA /* WeechatMessage.m */,
+			);
+			name = Relay;
+			sourceTree = "<group>";
+		};
 		121F3AE31863B2280017E6C3 = {
 			isa = PBXGroup;
 			children = (
@@ -136,12 +150,11 @@
 		121F3AF51863B2280017E6C3 /* Weechat */ = {
 			isa = PBXGroup;
 			children = (
+				120C37F11866163D00D27EAA /* Relay */,
 				121F3AFE1863B2280017E6C3 /* AppDelegate.h */,
 				121F3AFF1863B2280017E6C3 /* AppDelegate.m */,
 				121F3B011863B2280017E6C3 /* Main_iPhone.storyboard */,
 				121F3B041863B2280017E6C3 /* Main_iPad.storyboard */,
-				121F3B3318650C120017E6C3 /* WeechatRelayHandler.h */,
-				121F3B3418650C120017E6C3 /* WeechatRelayHandler.m */,
 				121F3B2A1864AD0E0017E6C3 /* SettingsViewController.h */,
 				121F3B2B1864AD0E0017E6C3 /* SettingsViewController.m */,
 				121F3B071863B2280017E6C3 /* MasterViewController.h */,
@@ -297,6 +310,7 @@
 				121F3B39186545160017E6C3 /* GZIP.m in Sources */,
 				121F3B001863B2280017E6C3 /* AppDelegate.m in Sources */,
 				121F3B091863B2280017E6C3 /* MasterViewController.m in Sources */,
+				120C37F418661C0600D27EAA /* WeechatMessage.m in Sources */,
 				121F3B3518650C120017E6C3 /* WeechatRelayHandler.m in Sources */,
 				121F3B2C1864AD0E0017E6C3 /* SettingsViewController.m in Sources */,
 				121F3AFC1863B2280017E6C3 /* main.m in Sources */,

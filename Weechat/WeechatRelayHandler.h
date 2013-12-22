@@ -15,4 +15,9 @@
 @property int port;
 @property BOOL useSSL;
 
+- (id)init;
+
+- (BOOL)connect;
+- (void)sendCommand:(NSString*)command withArguments:(NSString *)arguments;
+- (void)sendCommand:(NSString*)command withArguments:(NSString *)arguments andMessageId:(NSString *)messageId;
 @end
